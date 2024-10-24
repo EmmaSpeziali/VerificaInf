@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina di Accesso</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Carrello</h1>
+    <form>
+        <div class="container">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Mario" oninput="validateField('nome', LETTERS_REGEX)" required />
+            
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" placeholder="Rossi" oninput="validateField('cognome', LETTERS_REGEX)" required />
+            
+            <label for="cell">Cellulare:</label>
+            <input type="number" id="cell" placeholder="1234567890" oninput="validateField('cell', PHONE_REGEX)" required />
+            
+            <label for="via">Via:</label>
+            <input type="text" id="via" placeholder="Via..." oninput="validateField('via', VIA_REGEX)" required />
+            
+            <label for="cFisc">Codice Fiscale:</label>
+            <input type="text" id="cFisc" placeholder="ABCDEF01G23H456I" oninput="validateField('cFisc', CF_REGEX)" required />
+            
+            <label for="age">Età:</label>
+            <input type="number" id="age" min="0" max="99" placeholder="0-99..." oninput="checkAge()" required />
+            
+            <div class="containerGen" id="genitori">
+                <label for="nomeGen">Nome Genitore:</label>
+                <input type="text" id="nomeGen" placeholder="Mario" required />
+                <label for="cognomeGen">Cognome Genitore:</label>
+                <input type="text" id="cognomeGen" placeholder="Rossi" required />
+                <label for="cFiscGen">Codice Fiscale Genitore:</label>
+                <input type="text" id="cFiscGen" placeholder="ABCDEF01G23H456I" required />
+            </div>
+
+            <div class="containerOgg">
+                <div>
+                    <img src="pro3.jpeg" class="imgProdotti" alt="Acido Ialuronico" />
+                    <p>7,12€</p>
+                    <label for="quantita1">Quantità:</label>
+                    <input type="number" id="quantita1" min="1" placeholder="1" />
+                </div>
+                <div>
+                    <img src="pro1.jpeg" class="imgProdotti" alt="Mascara" />
+                    <p>6,49€</p>
+                    <label for="quantita2">Quantità:</label>
+                    <input type="number" id="quantita2" min="1" placeholder="1" />
+                </div>
+                <div>
+                    <img src="pro4.jpeg" class="imgProdotti" alt="Detergente" />
+                    <p>3,89€</p>
+                    <label for="quantita3">Quantità:</label>
+                    <input type="number" id="quantita3" min="1" placeholder="1" />
+                </div>
+            </div>
+
+            <div class="btnContainer">
+                <input type="button" value="Invia" onclick="checkForm()" />
+                <input type="reset" value="Cancella" />
+            </div>
+        </div>
+
+        <div class="container order" id="order">
+            <h1>Recap ordine</h1>
+            <div id="recap"></div>
+        </div>
+    </form>
+</body>
+</html>
